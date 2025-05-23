@@ -1,0 +1,37 @@
+Design a game around Dijkstra's algorithm
+Optimal solution is visiting all vertices with the shortest path, no cycles
+NP-Hard because it requires a non-polynomial branching solution
+With the added constraint of "is there a path with total length less than X" then it becomes easy to verify and NP
+
+Game design:
+Generate a set of vertices randomly and calculate the minimum distance by solving TSP
+Set an arbitrary threshold minimum distance high enough to be satisfied (i.e. 100)
+Define ranges for vertex generation on X / Y axis scales 0->10
+How to ensure that the graph is connected? Draw distances between all vertices?
+Randomize distances between vertices, not actual pythagorean distance
+Game question: is there a path in the chart that hits the minimum distance?
+
+Game solves Dijkstra and stores solution, yes / no - can randomize actual answer, go +10/-10 on solution
+Player needs to figure out whether there is a solution
+
+Player starts at a given vertex, and chooses which to go to next based on a drawn map (matplotlib)
+Game tracks running total
+
+End state: original vertex is reached, player answers yes/no, quit, or reset selections
+
+Provides answer upon quit / success
+
+
+Dijkstra implementation
+BFS + Priority Queue / heapq
+
+FML Dijkstra is not NP Complete
+
+Back to TSP
+NP-Complete version asks whether each city can be visited exactly once within a maximum cost
+
+
+Game module
+run tsp and store optimal path / result
+find best path through the points
+your score vs. best score (lower is better)
