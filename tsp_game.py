@@ -28,7 +28,7 @@ def tsp_game():
     time.sleep(1)
     print("The imperial army is coming, and we must stand together!")
     time.sleep(1)
-    print(f"Find the shortest path you can between all {n} towns, only united can we prevail against the enemy.")
+    print(f"Find the shortest path you can between all {n-1} towns, only united can we prevail against the enemy.")
     time.sleep(1)
     print("Rules: We only have time to visit each city once, there's no time to waste!")
     time.sleep(1)
@@ -76,7 +76,7 @@ def tsp_game():
         prev = inp
 
         # Ran out of time
-        if hours_left < 0:
+        if round(hours_left,0) < 0:
             game_state = 2
             break
 
@@ -91,7 +91,7 @@ def tsp_game():
         time.sleep(2)
 
     # End States
-    print(hours_left)
+    # print(hours_left)
     if game_state == 0:
         print("Guess you weren't the hero the prophecy foretold after all.")
     if game_state == 1:
